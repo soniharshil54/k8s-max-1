@@ -33,4 +33,10 @@ kubectl expose deployment first-app --type=LoadBalancer --port=8080
 minikube service first-app
 ```
 
+## Scale deployment to start multiple pods simultaneously for the same container
+
+```bash
+kubectl scale deployment/first-app --replicas=3
+```
+
 
