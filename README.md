@@ -21,4 +21,16 @@ docker push <your-dockerhub-user-name>/kub-first-app
 kubectl create deployment first-app --image=soniharshil54/kub-first-app
 ```
 
+## Expose the deployment (create service) to access the deployed container/pod from outside of cluster (host/browser).
+
+```bash
+kubectl expose deployment first-app --type=LoadBalancer --port=8080
+```
+
+## Get the ip address of the pod to access it
+
+```bash
+minikube service first-app
+```
+
 
