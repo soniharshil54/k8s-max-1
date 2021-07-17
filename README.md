@@ -39,4 +39,24 @@ minikube service first-app
 kubectl scale deployment/first-app --replicas=3
 ```
 
+## Update deployment
+
+Make a change in the code (html code) that you can identify in browser. 
+rebuild the image or create a newly named image if you want. I will just be rebuilding the image here (building image with the same name but a different tag).
+and then push the image to dockerhub.
+
+```bash
+docker build -t kub-first-app:2 .
+docker tag a0b414f62ba3 <your-dockerhub-user-name>/kub-first-app:2
+docker push <your-dockerhub-user-name>/kub-first-app
+```
+
+Here `a0b414f62ba3` in second command is the image id if the image `kub-first-app:2`.
+
+```bash
+kubectl set image deployment/first-app kub-first-app=<your-dockerhub-user-name>/kub-first-app:2
+```
+
+
+
 
