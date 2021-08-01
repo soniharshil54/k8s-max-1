@@ -57,6 +57,12 @@ Here `a0b414f62ba3` in second command is the image id if the image `kub-first-ap
 kubectl set image deployment/first-app kub-first-app=<your-dockerhub-user-name>/kub-first-app:2
 ```
 
+## Create deployment declaratively
+
+```bash
+kubectl apply -f deployment.yaml
+```
+
 
 
 
